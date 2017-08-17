@@ -1,16 +1,18 @@
-# react-native-svg-image
+# react-native-html
 
-## Load SVG images from network
+## Load arbitrary HTML
 
-Simple SVG image renderer with progress loader
+Simple HTML renderer for react-native
 
-Ever had challenges loading SVGs from network using [react-native-svg](https://github.com/react-native-community/react-native-svg) or [react-native-svg-uri](https://github.com/matc4/react-native-svg-uri)?
+Ever had challenges rendering something in react-native? Can it render
+in HTML?
+
 This simple package is worth a try.
 
 ## Installation
 
 ```
-npm install react-native-svg-image --save
+npm install react-native-html --save
 
 ```
 
@@ -18,28 +20,24 @@ npm install react-native-svg-image --save
 
 | Prop | Type | Note |
 |---|---|---|
-| `source` | `ImageSource` | An object containing the svg image `uri`
+| `html` | `String` | 
 | `style` | `WebView` style | This extends [WebView](https://facebook.github.io/react-native/docs/webview.html) styles
 | `<any` | `WebView` props | Any other WebView prop(s)
 
 ## <a name="Usage">Usage</a>
 
 ```javascript
-import SVGImage from 'react-native-svg-image';
+import Html from 'react-native-html';
 
-const SVGImageComponent = () => (
+const SomeComponent = () => (
   <View style={{ flex: 1 }}>
-    <SVGImage
+    <Html
       style={{ width: 80, height: 80 }}
-      source={{uri:'https://fluent-panda.appspot.com.storage.googleapis.com/dumbbell.svg'}}
+      source={"<h1>hello world</h1>"
     />
   </View>
 );
 ```
-
-## Shots
-
-<img src="https://raw.githubusercontent.com/chitezh/react-native-svg-image/master/shots/react-native-svg.gif" width="280">
 
 ## Dev
 
@@ -50,3 +48,7 @@ Lint & test (todo)
 npm test
 
 ```
+
+## Inspiration
+
+https://github.com/chitezh/react-native-svg-image
